@@ -12,6 +12,6 @@
 #' estimate_beta(x,y)
 
 estimate_beta <- function(x,y) {
-  result <- (t(x) %*% x)^-1 %*% t(x) %*% y
+  result <- solve(t(x) %*% x) %*% (t(x) %*% y)
   return(result)
 }
